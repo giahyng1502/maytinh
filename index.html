@@ -3,37 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hưng Ánh</title>
+    <title>Máy Tính Đơn Giản</title>
     <style>
         body {
-            max-width: 500px;
-            border: 1px solid #2c2b2b;
             font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
         }
         .calculator {
-            display: inline-block;
+            width: 100%;
+            max-width: 400px;
             border: 1px solid #ccc;
-            padding: 1rem;
+            padding: 20px;
             border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .display {
-            width: 95%;
+            width: 100%;
             padding: 10px;
             margin-bottom: 10px;
             font-size: 2em;
             text-align: right;
-            border: 1px solid #2c2b2b;
+            border: 1px solid #ccc;
             border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
         }
         .buttons button {
-            width: 30%;
+            flex: 1 1 22%;
             padding: 15px;
             margin: 5px;
             font-size: 1.5em;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            box-sizing: border-box;
         }
+        .clear {
+            width: 100%;
+            background-color: #e44e4e;
+            color: white;
+            font-weight: 600;
+        }
+        .buttons .giahyng {
+            background-color: #ff3686;
+            color: white;
+        }
+    
         .buttons .operator {
             background-color: #f2a33c;
             color: white;
@@ -45,27 +69,35 @@
             background-color: #4caf50;
             color: white;
         }
-        .buttons .clear {
-            background-color: #e44e4e;
-            color: white;
+
+        @media (max-width: 600px) {
+            .buttons button {
+                flex: 1 1 30%;
+                font-size: 1.2em;
+                padding: 10px;
+                margin: 3px;
+            }
+            .display {
+                font-size: 1.5em;
+            }
+        
         }
     </style>
 </head>
 <body>
 
-    <div class="calculator">        
-        <center><h3>Máy tính Hưng Ánh</h3></center>
+    <div class="calculator">
         <input type="text" class="display" id="display" readonly>
         <div class="buttons">
             <button class="clear" onclick="clearDisplay()">C</button>
-            <button class="operator" onclick="appendOperator('/')">/</button>
-            <button class="operator" onclick="appendOperator('*')">*</button>
-            <button class="operator" onclick="appendOperator('-')">-</button>
             <button class="operator" onclick="appendOperator('+')">+</button>
-            <button></button>
-            <button class="number" onclick="appendNumber('7')">9</button>
+            <button class="operator" onclick="appendOperator('-')">-</button>
+            <button class="operator" onclick="appendOperator('*')">*</button>
+            <button class="operator" onclick="appendOperator('/')">/</button>
+            <button class="giahyng" onclick="totinh()">QUÀ</button>
+            <button class="number" onclick="appendNumber('7')">7</button>
             <button class="number" onclick="appendNumber('8')">8</button>
-            <button class="number" onclick="appendNumber('9')">7</button>
+            <button class="number" onclick="appendNumber('9')">9</button>
             <button class="number" onclick="appendNumber('4')">4</button>
             <button class="number" onclick="appendNumber('5')">5</button>
             <button class="number" onclick="appendNumber('6')">6</button>

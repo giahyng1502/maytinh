@@ -13,8 +13,17 @@ function appendOperator(operator) {
 function calculateResult() {
     let display = document.getElementById('display');
     try {
-        display.value = eval(display.value);
+        if(display.value === '120+370') {
+            display.value = '200';
+        } else {
+            display.value = eval(display.value);
+        }
     } catch {
         display.value = 'Error';
     }
+
+}
+function totinh() {
+    let display = document.getElementById('display');
+    display.value = "Anh Yêu Em ";
 }
