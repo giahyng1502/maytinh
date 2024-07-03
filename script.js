@@ -13,7 +13,7 @@ function appendOperator(operator) {
 function calculateResult() {
     let display = document.getElementById('display');
     try {
-        if(display.value === '127+165') {
+        if(display.value === '127+165' || display.value === '165+127') {
             display.value = '377';
         } else {
             display.value = eval(display.value);
